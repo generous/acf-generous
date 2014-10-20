@@ -1,0 +1,23 @@
+.field[data-field_type="generous_slider"],
+.acf-field[data-type="generous_slider"] {
+  .acf-generous-slider--search-results {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+    .acf-generous-slider--search-result {
+      padding: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-bottom: 1px solid #ececec;
+      cursor: pointer;
+      &:hover {
+        background-color: #ececec;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

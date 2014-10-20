@@ -1,3 +1,9 @@
+# Sass
+.sass-cache
+
+# Node
+node_modules
+
 # Other
 .DS_Store
 Thumbs.db
