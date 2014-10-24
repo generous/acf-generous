@@ -1,6 +1,6 @@
 {
   "name": "acf-generous",
-  "description": "A Wordpress ACF plugin that creates a field for searching and selecting Generous sliders.",
+  "description": "Provides ACF field types for integrating Generous sliders.",
   "version": "0.1.0",
   "homepage": "https://genero.us/",
   "repository": {

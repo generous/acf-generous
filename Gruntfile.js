@@ -63,15 +63,7 @@ module.exports = function(grunt) {
       },
       concat: {
         files: ['<%=acf_g.assets.path.src%>/js/**/*.js'],
-        tasks: ['concat']
-      },
-      uglify: {
-        files: ['<%=acf_g.assets.path.src%>/js/**/*.js'],
-        tasks: ['uglify']
-      },
-      clean: {
-        files: ['<%=acf_g.assets.path.build%>/js/**/*.js'],
-        tasks: ['clean']
+        tasks: ['concat', 'uglify', 'clean']
       }
     }
   });

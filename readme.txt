@@ -7,11 +7,13 @@ Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin adds a new ACF Field Type, Generous Slider, which provides a field for searching and selecting sliders.
+Provides ACF field types for integrating Generous sliders.
 
 == Description ==
 
-This is an add-on for [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) Wordpress plugin. It provides a field for searching and selecting sliders.
+This is an add-on for the [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) plugin that provides fields for integrating Generous sliders.
+
+*Requires a [Generous](https://genero.us) account.*
 
 = Dependencies =
 
@@ -20,7 +22,6 @@ This is an add-on for [Advanced Custom Fields](https://wordpress.org/plugins/adv
 
 = Compatibility =
 
-This ACF field type is compatible with:
 * ACF 5
 * ACF 4
 
@@ -30,9 +31,15 @@ All bugs reports should be made in the [Github repository](https://github.com/ge
 
 == Installation ==
 
-1. Copy the `acf-generous` folder into your `wp-content/plugins` folder.
-2. Activate the ACF Generous plugin via the plugins admin page.
-3. Create a new field via ACF and select the Generous Slider type.
+1. Confirm the Advanced Custom Fields (v5/4) plugin is installed.
+2. Copy or upload the `acf-generous` folder into your `wp-content/plugins` directory.
+3. Activate the ACF Generous plugin via the plugins admin page.
+
+== Usage ==
+
+= Fields =
+
+- `generous_slider` Auto-complete text input to search and select a slider from your account.
 
 == Changelog ==
 
