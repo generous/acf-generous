@@ -3,7 +3,7 @@ Contributors: genero.us, matthewgovaere
 Tags: generous, slider, acf, advanced, custom, field, admin
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,10 @@ All bugs reports should be made in the [Github repository](https://github.com/ge
 - `generous_slider` Auto-complete text input to search and select a slider from your account.
 
 == Changelog ==
+
+= 0.1.1 =
+* Fixed required field validation for generous_slider field type.
+* Fixed slider titles with double quotes not appearing.
 
 = 0.1.0 =
 * Initial release.

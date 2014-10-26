@@ -1,7 +1,7 @@
 {
   "name": "acf-generous",
   "description": "Provides ACF field types for integrating Generous sliders.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://genero.us/",
   "repository": {
     "type": "git",

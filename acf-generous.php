@@ -3,7 +3,7 @@
  * Plugin Name:       Advanced Custom Fields: Generous
  * Plugin URI:        https://github.com/generous/acf-generous
  * Description:       Provides ACF field types for integrating Generous sliders.
- * Version:           0.1.0
+ * Version:           0.1.1
  * Author:            Generous
  * Author URI:        https://genero.us
  * License:           GPL-2.0+
@@ -39,7 +39,7 @@ class ACF_Generous {
 	 *
 	 * @var      string                $version         The current version of the plugin.
 	 */
-	protected $version = '0.1.0';
+	protected $version = '0.1.1';
 
 	/**
 	 * The core functionality of the plugin.
