@@ -80,12 +80,23 @@ class acf_field_generous_slider extends acf_field {
 
 		$options = $wp_plugin_generous->get_options();
 
-		if( isset( $options['username'] ) && $options['username'] !== '') {
+		if ( isset( $options['username'] ) && $options['username'] !== '') {
+
+			$field_id = '';
+			$field_title = '';
+
+			if ( isset( $field['value'], $field['value']['id'] ) ) {
+				$field_id = $field['value']['id'];
+
+				if ( isset( $field['value']['title'] ) ) {
+					$field_title = $field['value']['title'];
+				}
+			}
 
 			$prefix = 'acf-generous-slider--search';
 
-			echo "<input type=\"text\" name=\"{$field['name']}[title]\" class=\"{$prefix}-input-title\" value=\"{$field['value']['title']}\" />";
-			echo "<input type=\"hidden\" name=\"{$field['name']}[id]\" class=\"{$prefix}-input-id\" value=\"{$field['value']['id']}\" />";
+			echo "<input type=\"text\" name=\"{$field['name']}[title]\" class=\"{$prefix}-input-title\" value=\"" . htmlspecialchars( $field_title ) . "\" />";
+			echo "<input type=\"hidden\" name=\"{$field['name']}[id]\" class=\"{$prefix}-input-id\" value=\"{$field_id}\" />";
 			echo "<input type=\"hidden\" class=\"{$prefix}-account\" value=\"{$options['username']}\" />";
 
 			echo "<div class=\"{$prefix}-results\"></div>";
@@ -134,11 +145,36 @@ class acf_field_generous_slider extends acf_field {
 	 * @return   array          $value    The modified value.
 	 */
 	function update_value( $value, $post_id, $field ) {
+
 		if ( '' === $value['id'] ) {
-			$value['title'] = '';
+			$value = false;
 		}
 
 		return $value;
+	}
+
+	/**
+	 * Validates the value prior to saving to database.
+	 *
+	 * This filter is used to perform validation on the value prior to saving.
+	 * All values are validated regardless of the field's required setting. This
+	 * allows you to validate and return messages to the user if the value is not correct.
+	 *
+	 * @since    5.0
+	 *
+	 * @param    bool           $valid    Validation status based on the value and the fields required setting.
+	 * @param    mixed          $value    The $_POST value.
+	 * @param    array          $field    The field array holding all the field options.
+	 * @param    string         $input    The corresponding input name for $_POST value
+	 *
+	 * @return   bool           $value    If values are valid.
+	 */
+	function validate_value( $valid, $value, $field, $input ){
+		if( '' === $value['id'] ) {
+			$valid = false;
+		}
+
+		return $valid;
 	}
 
 	/**

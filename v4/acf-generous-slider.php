@@ -95,10 +95,21 @@ class acf_field_generous_slider extends acf_field {
 
 		if( isset( $options['username'] ) && $options['username'] !== '') {
 
+			$field_id = '';
+			$field_title = '';
+
+			if ( isset( $field['value'], $field['value']['id'] ) ) {
+				$field_id = $field['value']['id'];
+
+				if ( isset( $field['value']['title'] ) ) {
+					$field_title = $field['value']['title'];
+				}
+			}
+
 			$prefix = 'acf-generous-slider--search';
 
-			echo "<input type=\"text\" name=\"{$field['name']}[title]\" class=\"{$prefix}-input-title\" value=\"{$field['value']['title']}\" />";
-			echo "<input type=\"hidden\" name=\"{$field['name']}[id]\" class=\"{$prefix}-input-id\" value=\"{$field['value']['id']}\" />";
+			echo "<input type=\"text\" name=\"{$field['name']}[title]\" class=\"{$prefix}-input-title\" value=\"" . htmlspecialchars( $field_title ) . "\" />";
+			echo "<input type=\"hidden\" name=\"{$field['name']}[id]\" class=\"{$prefix}-input-id\" value=\"{$field_id}\" />";
 			echo "<input type=\"hidden\" class=\"{$prefix}-account\" value=\"{$options['username']}\" />";
 			
 			echo "<div class=\"{$prefix}-results\"></div>";
@@ -206,7 +217,7 @@ class acf_field_generous_slider extends acf_field {
 	 */
 	function update_value( $value, $post_id, $field ) {
 		if ( '' === $value['id'] ) {
-			$value['title'] = '';
+			$value = false;
 		}
 
 		return $value;
